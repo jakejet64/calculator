@@ -37,22 +37,47 @@ function deleteLast(){
 }
 
 function evaluateExpression(){
+    if(expression.length == 1 && num == ''){
+        return;
+    }
     expression.push(num);
     num = '';
     if(!(validateExpression(expression))){
         clearMemory();
-        alert("Error - invalid input; memory cleared");
+        display.innerHTML = "Error - invalid input; memory cleared";
         return;
     }
     expression = multAndDiv(expression);
     expression = addAndSub(expression);
+    expression[0] = '' + ((parseFloat(expression[0])).toFixed(4));
     updateDisplay();
 }
 
 function validateExpression(input){
-    let ret = true;
+    // last input is a function
+    if(input[input.length-1] == ''){
+        return false;
+    }
+    // first input is a function
+    if(isAFunction(input[0])){
+        return false;
+    }
+    // functions & numbers alternate throughout
+    if(input.length > 1){
+        for(var i = 1; i < input.length - 1; i+=2){
+            if(!(isAFunction(input[i]) && isANumber(input[i-1]) && isANumber(input[i+1]))){
+                return false;
+            }
+        }
+    }
+    return true;
+}
 
-    return ret;
+function isAFunction(input){
+    return(input == '+' || input == '-' || input == '/' || input == 'x');
+}
+function isANumber(input){
+    return(!(isAFunction(input)))
 }
 
 function multAndDiv(input){
