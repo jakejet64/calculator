@@ -3,11 +3,10 @@
 }
 
 body {
-    background-color: rgb(193, 193, 218);
+    background-color: rgb(91, 91, 91);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: max-content;
 }
 
 #body {
@@ -21,7 +20,7 @@ body {
     justify-content: space-evenly;
 }
 
-#screen {
+#display {
     border: 3px solid black;
     border-radius: 15px;
     height: 100px;
