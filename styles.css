@@ -23,9 +23,15 @@ body {
 #display {
     border: 3px solid black;
     border-radius: 15px;
-    height: 100px;
-    width: 350px;
+    height: 80px;
+    width: 330px;
     background-color: rgb(215, 215, 197);
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 10px;
+    overflow: hidden;
+    font-size: 20px;
 }
 
 .row {

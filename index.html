@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <div id="body">
         <div class="row">
-            <div id="display"></div>
+            <div id="display">@jakejet64</div>
         </div>
         <div class="row">
-            <button class="doubleButton clear">Clear</button>
-            <button class="doubleButton delete">Delete</button>
+            <button onclick='clearMemory()' class="doubleButton clear">Clear</button>
+            <button onclick='deleteLast()' class="doubleButton delete">Delete</button>
         </div>
         <div class="row">
             <button onclick='addNum(7)' class="button 7">7</button>
@@ -27,7 +27,7 @@
             <button onclick='addNum(4)' class="button 4">4</button>
             <button onclick='addNum(5)' class="button 5">5</button>
             <button onclick='addNum(6)' class="button 6">6</button>
-            <button onclick='addFunc("*")' class="button x">x</button>
+            <button onclick='addFunc("x")' class="button x">x</button>
         </div>
         <div class="row">
             <button onclick='addNum(1)' class="button 1">1</button>
